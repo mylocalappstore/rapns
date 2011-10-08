@@ -1,6 +1,6 @@
 module Rapns
   module Daemon
-    class DeliveryQueue
+    class NotificationQueue
       def initialize
         @queue = Queue.new
         @waiting_threads = []

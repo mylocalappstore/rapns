@@ -1,6 +1,6 @@
 module Rapns
   module Daemon
-    class DeliveryHandler
+    class NotificationHandler
       STOP = 0x666
 
       def start
@@ -19,7 +19,7 @@ module Rapns
       protected
 
       def handle_next_notification
-        notification = Rapns::Daemon.delivery_queue.pop
+        notification = Rapns::Daemon.notification_queue.pop
         begin
           return if notification == STOP
 

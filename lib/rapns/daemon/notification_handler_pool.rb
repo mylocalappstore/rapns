@@ -1,11 +1,11 @@
 module Rapns
   module Daemon
-    class DeliveryHandlerPool < Pool
+    class NotificationHandlerPool < Pool
 
       protected
 
       def new_object_for_pool(i)
-        DeliveryHandler.new
+        NotificationHandler.new
       end
 
       def object_added_to_pool(object)
@@ -17,7 +17,7 @@ module Rapns
       end
 
       def drain_started
-        @num_objects.times { Rapns::Daemon.delivery_queue.push(Rapns::Daemon::DeliveryHandler::STOP) }
+        @num_objects.times { Rapns::Daemon.notification_queue.push(Rapns::Daemon::NotificationHandler::STOP) }
       end
     end
   end

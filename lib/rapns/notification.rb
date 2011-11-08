@@ -29,6 +29,7 @@ module Rapns
       json['aps']['alert'] = alert if alert
       json['aps']['badge'] = badge if badge
       json['aps']['sound'] = sound if sound
+      json['aps']['mdm'] = mdm if mdm
       attributes_for_device.each { |k, v| json[k.to_s] = v.to_s } if attributes_for_device
       json
     end

@@ -3,7 +3,7 @@ module Rapns
     set_table_name "rapns_notifications"
 
     #validates :device_token, :presence => true, :format => { :with => /^[a-z0-9]{64}$/ }
-    validates :device_token, :presence => true, :format => { :with => /^[a-z0-9]$/ }
+    validates :device_token, :presence => true
     validates :badge, :numericality => true, :allow_nil => true
     validates :expiry, :numericality => true, :presence => true
 
